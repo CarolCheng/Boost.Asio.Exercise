@@ -3,7 +3,6 @@
 #include <thread>         // std::this_thread::sleep_for
 #include <chrono>         // std::chrono::seconds
 #include <vector>
-#include <algorithm>
 
 class sync_echo_client 
 {
