@@ -9,7 +9,7 @@ class sync_echo_client
 {
 public:
 	sync_echo_client(boost::asio::io_service& io_service)
-	:socket_(io_service) 
+		:socket_(io_service) 
 	{
 		
 	}
