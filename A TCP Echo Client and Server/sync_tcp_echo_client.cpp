@@ -20,7 +20,7 @@ public:
 	void start(const std::string &msg)
 	{
 		char buffer[max_size];
-		socket_.write_some(boost::asio::buffer(msg));
+		socket_.write_some(boost::asio::buffer(msg + "\n"));
 		std::cout << "server echoed our " << msg<< ": ";
 		int bytes = boost::asio::read(
 		socket_, boost::asio::buffer(buffer), 
