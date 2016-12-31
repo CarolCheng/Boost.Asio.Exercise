@@ -21,7 +21,6 @@ public:
 	{
 		char buffer[max_size];
 		socket_.write_some(boost::asio::buffer(msg + "\n"));
-		std::cout << "server echoed our " << msg<< ": ";
 		int bytes = boost::asio::read(
 		socket_, boost::asio::buffer(buffer), 
 		[&](boost::system::error_code /*ec*/, std::size_t bytes) ->size_t
@@ -29,7 +28,8 @@ public:
 			return on_read(buffer, bytes);
 		});
 		std::string copy(buffer, bytes - 1);
-		std::cout << (copy == msg ? "OK" : "FAIL") << std::endl;
+		std::cout << "server echoed our " << msg<< ": "
+		          << (copy == msg ? "OK" : "FAIL") << std::endl;
 		socket_.close();
 	}
 private:
@@ -51,19 +51,19 @@ int main(int argc, char* argv[])
 		"Lucy just got home",
 		"Boost.Asio is Fun!"
 	};
-	// vector container stores threads
+	// Launch a group of client threads
 	std::vector<std::thread> workers;
 	for(auto p : messages) {
 		workers.push_back(std::thread( [&]{
 			sync_echo_client client(service);
 			client.connect("127.0.0.1", 4403);
 			client.start(p);
-			std::this_thread::sleep_for(std::chrono::seconds(1));
 		})
 		);
+		std::this_thread::sleep_for(std::chrono::seconds(1));
 	}
 
-	// Looping every thread via for_each
+	// Join the threads with the main thread
 	std::for_each(workers.begin(), workers.end(), [](std::thread &t) 
 	{
 		t.join();
