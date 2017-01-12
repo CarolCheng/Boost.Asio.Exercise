@@ -11,12 +11,13 @@
 
 ##Content
 1. A TCP Echo Client and Server
-  * synchronous
-    * server only accept one client connection at a time <br />
-    ![sync server class diagram](https://github.com/CarolCheng/Boost.Asio.Exercise/blob/master/UML%20Diagram/sync_tcp_echo_server.png?raw=true)
-  * asynchronous 
-    * server only accept multiple client connections at a time <br />
-    ![async server class diagram](https://github.com/CarolCheng/Boost.Asio.Exercise/blob/master/UML%20Diagram/async_tcp_echo_server.png?raw=true)
+
+|            	|       synchronous      	|         asynchronous         	|
+|:--------------------------:	|:----------------------:	|:----------------------------:	|
+| How may clients   <br /> at a time 	| one client connection  	| multiple client connections  	|
+| Connect <br /> (Boost Asio Function) 	| [connect](https://goo.gl/IWT3Om) |  [async_connect](https://goo.gl/uWV1ZU)|
+|      UML Class Diagram     	| ![sync server class diagram](https://github.com/CarolCheng/Boost.Asio.Exercise/blob/master/UML%20Diagram/sync_tcp_echo_server.png?raw=true) |![async server class diagram](https://github.com/CarolCheng/Boost.Asio.Exercise/blob/master/UML%20Diagram/async_tcp_echo_server.png?raw=true)|
+
 2. A synchronous TCP Client and Server
 3. A asynchronous TCP Client and Server
 
