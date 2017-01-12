@@ -15,7 +15,7 @@
 |   Server      	      	      |       synchronous      	|         asynchronous         	|
 |:--------------------------:	|:----------------------:	|:----------------------------:	|
 | How may clients   <br /> at a time 	| one client connection  	| multiple client connections  	|
-| Accept <br /> (Boost Asio Function) 	| [connect](https://goo.gl/06oFIU) |  [async_accept](https://goo.gl/slWbX0)|
+| Accept Function<br /> (basic_socket_acceptor) 	| [accept](https://goo.gl/06oFIU) |  [async_accept](https://goo.gl/slWbX0)|
 |      UML Class Diagram     	| ![sync server class diagram](https://github.com/CarolCheng/Boost.Asio.Exercise/blob/master/UML%20Diagram/sync_tcp_echo_server.png?raw=true) |![async server class diagram](https://github.com/CarolCheng/Boost.Asio.Exercise/blob/master/UML%20Diagram/async_tcp_echo_server.png?raw=true)|
 
 2. A synchronous TCP Client and Server
