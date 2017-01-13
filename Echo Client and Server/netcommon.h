@@ -4,6 +4,6 @@
 #include <boost/asio.hpp>
 
 typedef boost::asio::ip::tcp TCP;
-const int max_size = 1024;
+const int max_size_ = 1024;
 
 #endif // NETCOMMON_HPP
