@@ -10,8 +10,8 @@
     * OpenSSL
 
 ##Content
-### 1. TCP Client and Server
-1.1. Echo Server
+### 1. Echo Client and Server
+1.1. TCP Echo Server
 
 |   Server      	      	      |       synchronous      	|         asynchronous         	|
 |:--------------------------:	|:----------------------:	|:----------------------------:	|
@@ -19,7 +19,7 @@
 | Accept Function<br /> (basic_socket_acceptor) 	| [accept](https://goo.gl/06oFIU) |  [async_accept](https://goo.gl/slWbX0)|
 |      UML Class Diagram     	| ![sync server class diagram](https://github.com/CarolCheng/Boost.Asio.Exercise/blob/master/UML%20Diagram/sync_tcp_echo_server.png?raw=true) |![async server class diagram](https://github.com/CarolCheng/Boost.Asio.Exercise/blob/master/UML%20Diagram/async_tcp_echo_server.png?raw=true)|
 
-1.2. Echo Client
+1.2. TCP Echo Client
 
 1.3. Synchronous Client and Server
 

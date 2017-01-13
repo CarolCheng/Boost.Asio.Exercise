@@ -17,10 +17,10 @@ public:
 			acceptor_.accept(socket_);
 			char buffer[max_size_];
 			int bytes = boost::asio::read(socket_, boost::asio::buffer(buffer), 
-			     [&](boost::system::error_code ec, std::size_t bytes) ->size_t
-			     {
+				[&](boost::system::error_code ec, std::size_t bytes) ->size_t
+				{
 				    return on_read(buffer, bytes);
-    			});
+				});
 			socket_.write_some(boost::asio::buffer(buffer, bytes));
 			socket_.close();
 		}
