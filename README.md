@@ -21,6 +21,10 @@
 
 1.2. TCP Echo Client
 
+|   Client      	      	      |       synchronous      	|         asynchronous         	|
+|:--------------------------:	|:----------------------:	|:----------------------------:	|
+| Accept Function<br /> (basic_socket) 	| [connect](https://goo.gl/NF1mTW) |  [async_connect](https://goo.gl/a901jz)|
+|      UML Class Diagram     	| ![sync server class diagram](https://github.com/CarolCheng/Boost.Asio.Exercise/blob/master/UML%20Diagram/sync_tcp_echo_client.png?raw=true) |![async server class diagram](https://github.com/CarolCheng/Boost.Asio.Exercise/blob/master/UML%20Diagram/async_tcp_echo_client.png?raw=true)|
 1.3. Synchronous Client and Server
 
 1.4. Asynchronous Client and Server
