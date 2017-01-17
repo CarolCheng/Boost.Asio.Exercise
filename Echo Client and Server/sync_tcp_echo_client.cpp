@@ -12,12 +12,12 @@ public:
 	{
 		
 	}
-	void connect(const std::string &ipaddr, const int port)
+	void start(const std::string &ipaddr, const int port)
 	{
 		TCP::endpoint hostname(boost::asio::ip::address::from_string(ipaddr), port);
 		socket_.connect(hostname);
 	}
-	void start(const std::string &msg)
+	void write(const std::string &msg)
 	{
 		char buffer[max_size_];
 		socket_.write_some(boost::asio::buffer(msg + "\n"));
@@ -33,6 +33,11 @@ public:
 		socket_.close();
 	}
 private:
+	/**
+       * CompletionCondition : read until the character '\n' 
+       * @param bytes the number of bytes read
+       * @return if the message are read completely
+       */
 	size_t on_read(char *buffer, size_t bytes) 
 	{
 		bool found = std::find(buffer, buffer + bytes, '\n') < buffer + bytes;
@@ -55,8 +60,8 @@ int main(int argc, char* argv[])
 	for(auto p : messages) {
 		workers.push_back(std::thread( [&] {
 			sync_echo_client client(service);
-			client.connect("127.0.0.1", 4403);
-			client.start(p);
+			client.start("127.0.0.1", 4403);
+			client.write(p);
 		}));
 		std::this_thread::sleep_for(std::chrono::seconds(1));
 	}

@@ -36,7 +36,7 @@ private:
 			[this, self](const boost::system::error_code &ec, std::size_t bytes) 
 			{
 			    if (!ec)
-			    do_write(data_,bytes);
+					do_write(data_,bytes);
 				stop();   
 			});
 	}
