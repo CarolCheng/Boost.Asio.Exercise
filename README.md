@@ -15,7 +15,6 @@
 
 |   Server      	      	      |       synchronous      	|         asynchronous         	|
 |:--------------------------:	|:----------------------:	|:----------------------------:	|
-| How may clients   <br /> at a time 	| one client connection  	| multiple client connections  	|
 | Accept Function<br /> (basic_socket_acceptor) 	| [accept](https://goo.gl/06oFIU) |  [async_accept](https://goo.gl/slWbX0)|
 |      UML Class Diagram     	| ![sync server class diagram](https://github.com/CarolCheng/Boost.Asio.Exercise/blob/master/UML%20Diagram/sync_tcp_echo_server.png?raw=true) |![async server class diagram](https://github.com/CarolCheng/Boost.Asio.Exercise/blob/master/UML%20Diagram/async_tcp_echo_server.png?raw=true)|
 
@@ -23,7 +22,7 @@
 
 |   Client      	      	      |       synchronous      	|         asynchronous         	|
 |:--------------------------:	|:----------------------:	|:----------------------------:	|
-| Accept Function<br /> (basic_socket) 	| [connect](https://goo.gl/NF1mTW) |  [async_connect](https://goo.gl/a901jz)|
+| Connect Function<br /> (basic_socket) 	| [connect](https://goo.gl/NF1mTW) |  [async_connect](https://goo.gl/a901jz)|
 |      UML Class Diagram     	| ![sync server class diagram](https://github.com/CarolCheng/Boost.Asio.Exercise/blob/master/UML%20Diagram/sync_tcp_echo_client.png?raw=true) |![async server class diagram](https://github.com/CarolCheng/Boost.Asio.Exercise/blob/master/UML%20Diagram/async_tcp_echo_client.png?raw=true)|
 1.3. Synchronous Client and Server
 
